@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Metronome" android:id="@+id/metronome_option"/>
+    <item android:title="Tap tempo" android:id="@+id/tap_tempo_option"/>
+</menu>
