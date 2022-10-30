@@ -1,4 +1,4 @@
-package com.example.metronom;
+package com.example.metronome;
 
 import org.junit.Test;
 
