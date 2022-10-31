@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"/>
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+    <Button
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/animation_3" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.049"
+            app:layout_constraintEnd_toStartOf="@+id/animation_4" android:layout_marginEnd="20dp"
+            app:cornerRadius="80dp"
+            tools:ignore="SpeakableTextPresentCheck" app:backgroundTint="#353232"/>
+    <Button
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/animation_2" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.049"
+            app:cornerRadius="80dp"
+            app:layout_constraintEnd_toStartOf="@+id/animation_3" app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toEndOf="@+id/animation_1" tools:ignore="SpeakableTextPresentCheck"
+            app:backgroundTint="#353232"/>
+    <Button
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/animation_4" app:layout_constraintTop_toTopOf="parent"
+            app:cornerRadius="80dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.049" app:layout_constraintStart_toEndOf="@+id/animation_1"
+            app:layout_constraintHorizontal_bias="0.913" tools:ignore="SpeakableTextPresentCheck"
+            app:backgroundTint="#353232"/>
+    <Button
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/animation_1" app:layout_constraintTop_toTopOf="parent"
+            app:cornerRadius="80dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.049"
+            app:layout_constraintEnd_toStartOf="@+id/animation_4" android:layout_marginEnd="215dp"
+            app:layout_constraintStart_toStartOf="parent" tools:ignore="SpeakableTextPresentCheck"
+            app:backgroundTint="#353232"/>
+    <NumberPicker
+            android:id="@+id/tempo_picker"
+            android:layout_width="239dp"
+            android:theme="@style/NumberPickerText"
+            android:layout_height="139dp" tools:ignore="MissingConstraints"
+            android:scaleY="2.5"
+            android:scaleX="2.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/start_button" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.686"/>
+    <Button
+            android:text="PLAY"
+            android:textSize="50dp"
+            app:cornerRadius="80dp"
+            android:layout_width="200dp"
+            android:layout_height="120dp" android:id="@+id/start_button"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            android:layout_marginBottom="80dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
