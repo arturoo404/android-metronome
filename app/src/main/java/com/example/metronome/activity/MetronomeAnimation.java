@@ -11,31 +11,44 @@ public class MetronomeAnimation {
 
     private boolean work = false;
 
+    private long tempo;
+
     public void animation() {
-        if (!status){
-            work = false;
-            animation4.setBackgroundColor(0xff353232);
-            return;
-        }
 
         work = true;
 
         try {
             animation4.setBackgroundColor(0xff353232);
+            if (!status){
+                work = false;
+                return;
+            }
             animation1.setBackgroundColor(Color.BLUE);
-            Thread.sleep(1000);
+            Thread.sleep(tempo);
 
             animation1.setBackgroundColor(0xff353232);
+            if (!status){
+                work = false;
+                return;
+            }
             animation2.setBackgroundColor(Color.BLUE);
-            Thread.sleep(1000);
+            Thread.sleep(tempo);
 
             animation2.setBackgroundColor(0xff353232);
+            if (!status){
+                work = false;
+                return;
+            }
             animation3.setBackgroundColor(Color.BLUE);
-            Thread.sleep(1000);
+            Thread.sleep(tempo);
 
             animation3.setBackgroundColor(0xff353232);
+            if (!status){
+                work = false;
+                return;
+            }
             animation4.setBackgroundColor(Color.BLUE);
-            Thread.sleep(1000);
+            Thread.sleep(tempo);
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -54,6 +67,10 @@ public class MetronomeAnimation {
 
     public boolean isStatus() {
         return status;
+    }
+
+    public void setTempo(long tempo) {
+        this.tempo = tempo;
     }
 
     public MetronomeAnimation(Button animation1, Button animation2, Button animation3, Button animation4) {

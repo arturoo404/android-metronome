@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Thread thread;
 
+    private int userTempo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         metronomeRun();
     }
+    @SuppressLint("SetTextI18n")
     private void metronomeRun() {
         metronomeAction.setOnClickListener(v -> {
             if (metronomeAnimation == null){
@@ -40,12 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
             if (!metronomeAnimation.isStatus() && !metronomeAnimation.isWork()){
                 metronomeAnimation.setStatus(true);
+                metronomeAnimation.setTempo(60000/userTempo);
                 thread = new Thread(() -> metronomeAnimation.animation());
                 thread.start();
+                metronomeAction.setText("STOP");
                 return;
             }
 
             metronomeAnimation.setStatus(false);
+            metronomeAction.setText("PLAY");
         });
     }
 
@@ -54,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         numberPicker = findViewById(R.id.tempo_picker);
         numberPicker.setMinValue(40);
         numberPicker.setMaxValue(250);
+
+        userTempo = numberPicker.getValue();
+
+        numberPicker.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            userTempo = newVal;
+        });
     }
 
     private void buttonInit(){
